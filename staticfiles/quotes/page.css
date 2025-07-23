@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+    background: linear-gradient(120deg, #fffbe6, #ffe0c3, #ffd6e0, #fff1eb, #fceabb, #f8e1a1);
+    background-size: 400% 400%;
+    min-height: 100vh;
+    font-family: 'Montserrat', Arial, sans-serif;
+    animation: gradientBG 24s ease-in-out infinite;
+}
+
+@keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+.big-quote {
+    font-style: italic;
+    font-size: 2em;
+    color: #222;
+    margin-bottom: 32px;
+    margin-top: 80px;
+    text-align: center;
+    line-height: 1.35;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 500;
+    opacity: 0;
+    animation: fadeIn 1.2s ease 0.1s forwards;
+}
+
+.quote-meta {
+    text-align: center;
+    margin-bottom: 8px;
+    font-size: 1.08em;
+}
+
+.quote-meta strong {
+    color: #3a6ea5;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.quote-views {
+    text-align: center;
+    margin-bottom: 24px;
+    color: #444;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+}
+
+.quote-views svg {
+    width: 1.2em;
+    height: 1.2em;
+    vertical-align: middle;
+    color: #3a6ea5;
+    opacity: 0.8;
+}
+
+.vote-form {
+    display: inline-block;
+    margin: 0 8px;
+}
+
+.vote-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: #f5f7fa;
+    border: none;
+    border-radius: 22px;
+    padding: 9px 22px;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #3a6ea5;
+    cursor: pointer;
+    box-shadow: 0 1px 6px rgba(58, 110, 165, 0.08);
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.18s;
+    outline: none;
+}
+
+.like-btn {
+    background: linear-gradient(90deg, #6dd5ed 0%, #2193b0 100%);
+    color: #fff;
+}
+
+.dislike-btn {
+    background: linear-gradient(90deg, #e0eafc 0%, #b6c6e6 100%);
+    color: #b23b3b;
+}
+
+.vote-btn:hover {
+    box-shadow: 0 4px 18px rgba(58, 110, 165, 0.13);
+    opacity: 0.97;
+    transform: translateY(-2px) scale(1.04);
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+.top-title {
+    text-align: center;
+    font-size: 2.1em;
+    font-weight: 700;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    color: #3a6ea5;
+    letter-spacing: 1px;
+}
+
+.top-quote-block {
+    background: rgba(255,255,255,0.85);
+    margin: 0 auto 48px auto;
+    max-width: 700px;
+    padding: 32px 24px 24px 24px;
+    border-radius: 22px;
+    box-shadow: 0 4px 24px rgba(100, 125, 222, 0.10), 0 1.5px 6px rgba(67, 206, 162, 0.08);
+    animation: fadeIn 1.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.top-quote-block:last-child {
+    border-bottom: none;
+}
+
+.top-quote-stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 36px;
+    margin-top: 18px;
+    font-size: 1.25em;
+}
+
+.like-stat svg {
+    fill: #ff5e62;
+    margin-right: 7px;
+    width: 28px;
+    height: 28px;
+}
+
+.dislike-stat svg {
+    fill: #b23b3b;
+    margin-right: 7px;
+    width: 28px;
+    height: 28px;
+}
+
+.views-stat svg {
+    margin-right: 7px;
+    vertical-align: middle;
+    width: 28px;
+    height: 28px;
+    stroke: #3a6ea5;
+}
+
+.like-stat, .dislike-stat, .views-stat {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 600;
+}
+
+.top-quote-block .big-quote {
+    font-size: 1.3em;
+    margin-top: 0;
+    margin-bottom: 18px;
+    color: #222;
+    text-align: center;
+    line-height: 1.4;
+    font-style: italic;
+    opacity: 0;
+    animation: fadeIn 1.2s ease 0.1s forwards;
+}
+
+.top-quote-block .quote-meta {
+    text-align: center;
+    margin-bottom: 4px;
+    font-size: 1.08em;
+}
+
+.top-quote-list {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    align-items: center;
+    margin-bottom: 60px;
+    margin-top: 30px;
+}
+
+.grid-2col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 32px;
+    align-items: stretch;
+    justify-items: center;
+}
+
+@media (max-width: 900px) {
+    .grid-2col {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+}
+
+.top-quote-card {
+    position: relative;
+    background: rgba(255,255,255,0.98);
+    border-radius: 36px;
+    box-shadow: 0 4px 18px rgba(100, 125, 222, 0.10), 0 1.5px 6px rgba(67, 206, 162, 0.08);
+    padding: 28px 18px 18px 18px;
+    max-width: 420px;
+    width: 100%;
+    border: 1.5px solid #e0eafc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 1.2s ease;
+    transition: box-shadow 0.2s;
+}
+
+.top-quote-rank {
+    position: absolute;
+    top: -18px;
+    left: -18px;
+    background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
+    color: #fff;
+    font-size: 1.25em;
+    font-weight: 700;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(67, 206, 162, 0.13);
+    border: 3px solid #fff;
+    z-index: 2;
+    letter-spacing: 1px;
+}
+
+.top-quote-card:hover {
+    box-shadow: 0 10px 32px rgba(100, 125, 222, 0.16), 0 4px 16px rgba(67, 206, 162, 0.13);
+}
+
+.top-quote-text {
+    font-size: 1.1em;
+    margin-bottom: 18px;
+}
+
+.quote-mark {
+    font-size: 2.2em;
+    color: #43cea2;
+    opacity: 0.18;
+    font-family: serif;
+    line-height: 0.7;
+    user-select: none;
+}
+
+.top-quote-stats {
+    gap: 18px;
+    margin-bottom: 14px;
+    font-size: 1em;
+}
+
+.like-stat svg {
+    fill: #ff5e62;
+    margin-right: 7px;
+    width: 26px;
+    height: 26px;
+}
+
+.dislike-stat svg {
+    fill: #b23b3b;
+    margin-right: 7px;
+    width: 26px;
+    height: 26px;
+}
+
+.views-stat svg {
+    margin-right: 7px;
+    vertical-align: middle;
+    width: 26px;
+    height: 26px;
+    stroke: #3a6ea5;
+}
+
+.like-stat, .dislike-stat, .views-stat {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 600;
+}
+
+.top-quote-meta {
+    margin-top: 10px;
+    font-size: 0.93em;
+}
+
+.top-quote-meta .quote-meta strong {
+    color: #3a6ea5;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+@media (max-width: 600px) {
+    .big-quote {
+        font-size: 1.1em;
+        margin-top: 30px;
+        padding: 0 8px;
+    }
+    .vote-btn {
+        padding: 7px 12px;
+        font-size: 1em;
+    }
+    .top-title {
+        font-size: 1.2em;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .top-quote-block {
+        padding: 10px 2px 12px 2px;
+        max-width: 98vw;
+    }
+    .top-quote-stats {
+        gap: 12px;
+        font-size: 1em;
+    }
+    .top-quote-block .big-quote {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 700px) {
+    .top-quote-card {
+        padding: 10px 2px 8px 2px;
+        max-width: 98vw;
+    }
+    .top-quote-text {
+        font-size: 0.98em;
+    }
+    .top-quote-stats {
+        gap: 8px;
+        font-size: 0.95em;
+    }
+}
