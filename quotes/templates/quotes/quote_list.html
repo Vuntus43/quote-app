@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Случайная цитата{% endblock %}
+
+{% block content %}
+    {% if quote %}
+        <article>
+            <blockquote style="font-style: italic; font-size: 1.2em;">{{ quote.text }}</blockquote>
+            <p><strong>Автор:</strong> {{ quote.author }}</p>
+            <p><strong>Источник:</strong> {{ quote.source }}</p>
+            <p>Просмотры: {{ quote.views }}</p>
+
+            <form action="{% url 'vote_quote' quote.id %}" method="post" style="display:inline;">
+                {% csrf_token %}
+                <input type="hidden" name="action" value="like">
+                <button type="submit">👍 {{ quote.likes }}</button>
+            </form>
+
+            <form action="{% url 'vote_quote' quote.id %}" method="post" style="display:inline;">
+                {% csrf_token %}
+                <input type="hidden" name="action" value="dislike">
+                <button type="submit">👎 {{ quote.dislikes }}</button>
+            </form>
+        </article>
+    {% else %}
+        <p>Цитаты пока не добавлены.</p>
+    {% endif %}
+{% endblock %}

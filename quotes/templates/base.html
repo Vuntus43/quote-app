@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Цитаты{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1><a href="{% url 'home' %}">Цитаты</a></h1>
+            <ul>
+                <li><a href="{% url 'home' %}">Главная</a></li>
+                <li><a href="{% url 'top_quotes' %}">Топ-10</a></li>
+                <li><a href="{% url 'quote_create' %}">Добавить цитату</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>

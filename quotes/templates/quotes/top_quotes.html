@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Топ-10 цитат{% endblock %}
+
+{% block content %}
+    <h2>Топ-10 цитат по лайкам</h2>
+
+    {% for quote in quotes %}
+        <div style="margin-bottom: 2em;">
+            <blockquote style="font-style: italic;">{{ quote.text }}</blockquote>
+            <p><strong>Источник:</strong> {{ quote.author }}</p>
+            <p>👍 {{ quote.likes }} | 👎 {{ quote.dislikes }} | 👁 {{ quote.views }}</p>
+        </div>
+    {% empty %}
+        <p>Пока нет цитат.</p>
+    {% endfor %}
+{% endblock %}
